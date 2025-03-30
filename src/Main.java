@@ -1,14 +1,28 @@
-import org.w3c.dom.ls.LSOutput;
+import java.util.Scanner;
 
 public class Main {
-    public static int pow(int a, int b){
-        if(b == 1){ return a; }
-        return a * pow(a, b-1);
-
+    public static int min(int[] arr, int n) {
+        int min = arr[0];
+        for (int i = 1; i < n; i++) {
+            if (arr[i] < min) {
+                min = arr[i];
+            }
+        }
+        return min;
     }
+
     public static void main(String[] args) {
-        System.out.println(pow(6, 3));
+        Scanner scanner = new Scanner(System.in);
+        int n = scanner.nextInt();
+        int[] arr = new int[n];
+        for (int i = 0; i < n; i++) {
+            arr[i] = scanner.nextInt();
+        }
+        System.out.println(min(arr, n));
+        scanner.close();
     }
 }
+
+
 
 
